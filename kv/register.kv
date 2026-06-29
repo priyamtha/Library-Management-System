@@ -1,0 +1,42 @@
+<RegisterScreen>:
+
+    md_bg_color: 1,1,1,1
+
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: "30dp"
+        spacing: "15dp"
+
+        Widget:
+
+        MDLabel:
+            text: "Create Account"
+            halign: "center"
+            font_style: "H4"
+
+        MDTextField:
+            id: fullname
+            hint_text: "Full Name"
+
+        MDTextField:
+            id: email
+            hint_text: "Email"
+
+        MDTextField:
+            id: password
+            hint_text: "Password"
+            password: True
+
+        MDRaisedButton:
+            text: "REGISTER"
+            pos_hint: {"center_x": .5}
+            on_release:
+                root.register_user()
+
+        MDFlatButton:
+            text: "Back to Login"
+            pos_hint: {"center_x": .5}
+            on_release:
+                root.go_to_login()
+
+        Widget:

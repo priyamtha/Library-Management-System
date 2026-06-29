@@ -1,0 +1,42 @@
+<LoginScreen>:
+
+    md_bg_color: 0.97, 0.98, 1, 1
+
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: "30dp"
+        spacing: "15dp"
+
+        Widget:
+
+        MDLabel:
+            text: "Welcome Back"
+            halign: "center"
+            font_style: "H4"
+
+        MDLabel:
+            text: "Login to continue"
+            halign: "center"
+
+        MDTextField:
+            id: email
+            hint_text: "Email"
+
+        MDTextField:
+            id: password
+            hint_text: "Password"
+            password: True
+
+        MDRaisedButton:
+            text: "LOGIN"
+            pos_hint: {"center_x": 0.5}
+            on_release:
+                root.login_user()
+
+        MDFlatButton:
+            text: "Create Account"
+            pos_hint: {"center_x": 0.5}
+            on_release:
+                root.go_to_register()
+
+        Widget:
