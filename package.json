@@ -1,0 +1,15 @@
+{
+  "name": "folio-library-management",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "node --check app.js && node --check netlify/functions/api.mjs"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^23.5.0"
+  }
+}
