@@ -1,13 +1,16 @@
 {
-  "name": "folio-library-management",
+  "name": "librahub-library-management",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "netlify dev",
-    "build": "node --check app.js && node --check netlify/functions/api.mjs"
+    "build": "node --check app.js && node --check netlify/functions/api.mjs && node --check netlify/gemini.mjs",
+    "test": "node --test test-api.mjs test-gemini.mjs"
   },
   "dependencies": {
-    "@netlify/blobs": "^8.1.0"
+    "@google/genai": "^2.31.0",
+    "@netlify/blobs": "^8.1.0",
+    "dotenv": "^18.0.9"
   },
   "devDependencies": {
     "netlify-cli": "^23.5.0"

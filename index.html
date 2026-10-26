@@ -3,9 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f7f8f4" />
-    <meta name="description" content="A calmer way to care for your library." />
-    <title>Folio | Library management</title>
+    <meta name="theme-color" content="#F7F8F4" />
+    <meta name="description" content="LibraHub — Manage Today, Read a Brighter Tomorrow." />
+    <meta name="application-name" content="LibraHub" />
+    <meta name="apple-mobile-web-app-title" content="LibraHub" />
+    <link rel="icon" type="image/svg+xml" href="assets/librahub-icon.svg" />
+    <link rel="apple-touch-icon" href="assets/librahub-icon.svg" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <title>LibraHub | Library management</title>
+    <script>
+      try {
+        const savedTheme = localStorage.getItem("librahub-theme") || localStorage.getItem("folio-theme");
+        document.documentElement.dataset.theme = savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      } catch {
+        document.documentElement.dataset.theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      document.querySelector('meta[name="theme-color"]').content = document.documentElement.dataset.theme === "dark" ? "#141414" : "#F7F8F4";
+      const icon = document.querySelector('link[rel="icon"]');
+      if (icon && document.documentElement.dataset.theme === "dark") icon.href = "assets/librahub-icon-dark.svg";
+      const appleIcon = document.querySelector('link[rel="apple-touch-icon"]');
+      if (appleIcon && document.documentElement.dataset.theme === "dark") appleIcon.href = "assets/librahub-icon-dark.svg";
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
@@ -30,14 +48,17 @@
           <label>Year<input name="year" type="number" min="0" max="2100" placeholder="2024" /></label>
         </div>
         <div class="form-row">
-          <label>ISBN<input name="isbn" maxlength="24" placeholder="Optional" /></label>
+          <label>ISBN <span class="form-inline"><input name="isbn" maxlength="24" placeholder="Optional" /><button class="lookup-button" type="button" data-action="lookup-isbn">Lookup</button></span></label>
           <label>Total copies<input name="total" type="number" min="1" max="500" value="1" required /></label>
         </div>
+        <label class="inventory-toggle"><input name="inventoryTracked" type="checkbox" checked /> Track physical copy counts</label>
+        <label>Free ebook URL <span class="field-optional">optional</span><input name="ebookUrl" type="url" placeholder="https://www.gutenberg.org/ebooks/1342" /></label>
         <label>Cover image URL <span class="field-optional">optional</span><input name="cover" type="url" placeholder="https://…" /></label>
         <p class="form-error" id="book-form-error" role="alert"></p>
         <button class="button button-primary dialog-submit" type="submit">Add to collection <span aria-hidden="true">↗</span></button>
       </form>
     </dialog>
+    <dialog id="book-details-dialog" aria-labelledby="book-details-title"><div id="book-details-content" class="book-details-dialog"></div></dialog>
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
   </body>
 </html>

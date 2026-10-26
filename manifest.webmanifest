@@ -1,0 +1,24 @@
+{
+  "id": "/",
+  "name": "LibraHub — Manage Today, Read a Brighter Tomorrow",
+  "short_name": "LibraHub",
+  "description": "Your library, lending, and next great read in one place.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F8FC",
+  "theme_color": "#F5F8FC",
+  "icons": [
+    {
+      "src": "assets/librahub-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/librahub-icon-dark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

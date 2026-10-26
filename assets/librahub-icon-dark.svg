@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-labelledby="title">
+  <title id="title">LibraHub open book and learning symbol</title>
+  <g transform="translate(20 20) scale(.9)">
+    <path fill="#292722" stroke="#C6A15B" stroke-width="2" d="M16 116q42-6 84 26 42-32 84-26l3 47q-45-4-87 23-42-27-87-23z"/>
+    <path fill="#C6A15B" d="M23 111q39 1 77 30v39q-38-25-80-22z"/>
+    <path fill="#D6BD86" d="M177 111q-39-1-77 30v39q38-25 80-22z"/>
+    <path fill="#A98B55" d="M30 121q34 2 65 23v26q-31-19-67-18z"/>
+    <path fill="#B49A63" d="M170 121q-34 2-65 23v26q31-19 67-18z"/>
+    <path fill="#F2EEE5" d="M100 141q-31-38-70-42l-4 42q40-1 74 25z"/>
+    <path fill="#F2EEE5" d="M100 141q31-38 70-42l4 42q-40-1-74 25z"/>
+    <path fill="#87977A" d="M100 128c-7-37-31-52-59-62 29 3 51 14 59 34 8-20 30-31 59-34-28 10-52 25-59 62"/>
+    <circle cx="100" cy="59" r="14" fill="#87977A"/>
+    <path fill="#39362F" stroke="#C6A15B" stroke-width="2" d="m61 23 39-19 39 19-39 20z"/>
+    <path fill="#39362F" d="m61 23 39 20v13L72 41z"/>
+    <path fill="#292722" d="m139 23-39 20v13l28-15z"/>
+    <path fill="#D6BD86" d="M138 23h3v24h-3z"/>
+    <path fill="#D6BD86" d="M136 44h7l2 12q-5 5-10 0z"/>
+  </g>
+</svg>
